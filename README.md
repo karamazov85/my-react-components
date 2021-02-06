@@ -1,6 +1,6 @@
 # My Custom React Components
 
-This project conatins my custom react components. All components are tested with `react-testing-library`
+My custom react components. All components are tested with `react-testing-library`
 
 Demo: https://reverent-joliot-aea65c.netlify.app/
 

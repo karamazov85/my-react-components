@@ -19,7 +19,7 @@ const Accordion = () => {
               <Question key={item.id} {...item}/>)
             }
           </div>
-      </div>
+        </div>
      </div>
   );
 }
