@@ -5,8 +5,7 @@ import "./Question.style.scss"
 const Question = ({ question, answer }) => {
     const [showAnswer, setShowAnswer] = useState(false)
     return (
-        <>
-           <article className={showAnswer ? "add-bg" : ""}>
+           <div className={`answer-card ${showAnswer ? "add-bg" : ""}`}>
                 <button onClick={() => setShowAnswer(!showAnswer)}>
                     {
                         !showAnswer ? <FiPlus data-testid="plus" className="toggle-logo"/> : <FiMinus data-testid="minus" className="toggle-logo"/>
@@ -20,8 +19,7 @@ const Question = ({ question, answer }) => {
                     <a href="/learn-more">Learn more</a>    
                 </div>
                }
-           </article>
-        </>
+           </div>
     )
 }
 
