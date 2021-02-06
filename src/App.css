@@ -1,0 +1,11 @@
+section {
+  width: 100%;
+  padding: 0;
+  padding-top: 2.5rem;
+}
+
+/* background colours for different comps */
+
+.light-pink-gradient {
+  background: linear-gradient(135deg, #fdf5f3 0%, #ecf3ff 100%);
+}

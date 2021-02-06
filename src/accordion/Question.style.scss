@@ -1,12 +1,21 @@
 article {
   width: 100%;
+  padding: 1rem 1rem;
   display: grid;
   align-items: start;
-  grid-template-columns: 60px 120px 120px 120px 120px 21px;
+  grid-template-columns: 60px 1fr;
   grid-template-rows: 70px auto;
   grid-template-areas:
-    "button question question question question question"
-    "   .   answer   answer   answer   answer   answer";
+    "button question"
+    "   .   answer";
+
+  @media (max-width: 951px) {
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 70px auto;
+    grid-template-areas:
+      "button question"
+      "   .   answer";
+  }
 
   & button {
     grid-area: button;
@@ -20,6 +29,10 @@ article {
     height: 40px;
     cursor: pointer;
     outline: 0;
+
+    @media (max-width: 651px) {
+      place-self: start;
+    }
 
     & .toggle-logo {
       font-size: 2rem;
@@ -41,9 +54,18 @@ article {
     grid-area: answer;
     padding: 0 3.125rem 3.125rem 0;
 
+    @media (max-width: 651px) {
+      padding: 0 1rem 1.25rem 0;
+    }
+
     & p {
       font-weight: var(--fw-400);
       margin-bottom: 0.6875rem;
+
+      @media (max-width: 651px) {
+        font-size: var(--fs-300);
+        line-height: 1.4;
+      }
     }
 
     & a {
@@ -60,4 +82,8 @@ article {
 .add-bg {
   background-color: var(--clr-primary-400);
   border-radius: var(--border-radius);
+
+  @media (max-width: 651px) {
+    border-radius: 0;
+  }
 }

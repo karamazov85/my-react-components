@@ -1,9 +1,12 @@
+import "./App.css"
 import Accordion from "./accordion/Accordion"
 
 function App() {
   return (
     <>
-      <Accordion />
+      <section className="light-pink-gradient">
+        <Accordion />
+      </section>
     </>
   );
 }
