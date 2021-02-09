@@ -1,0 +1,33 @@
+.carousel__container {
+  overflow: hidden;
+}
+
+.carouselItems__container {
+  height: 25rem;
+  max-width: 40rem;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 5px 5px 5px gray;
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+
+.arrow-left {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 5%;
+  font-size: 2rem;
+  cursor: pointer;
+  color: rgba(178, 183, 189, 0.9);
+}
+
+.arrow-right {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  right: 5%;
+  font-size: 2rem;
+  cursor: pointer;
+  color: rgba(178, 183, 189, 0.9);
+}

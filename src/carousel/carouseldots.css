@@ -1,0 +1,15 @@
+.dot__container {
+  box-sizing: content-box;
+  padding-top: 16px;
+  display: flex;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.bs-dot {
+  font-size: 2rem;
+}
+
+.dot-active {
+  color: crimson;
+}

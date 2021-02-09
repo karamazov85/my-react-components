@@ -1,0 +1,51 @@
+.carouselItem__container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  background-size: cover;
+  transition: 0.2s ease-in;
+  border-radius: 0.3rem;
+}
+
+.carouselItem__container::after {
+  content: "";
+  position: absolute;
+  z-index: 111;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.previous {
+  opacity: 1;
+  transform: translateX(-110%);
+  border-radius: 0.3rem;
+  filter: blur(1px);
+  z-index: -1;
+}
+
+.next {
+  opacity: 1;
+  transform: translateX(110%);
+  border-radius: 0.3rem;
+  filter: blur(1px);
+  z-index: -1;
+}
+
+.text__container {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  color: aliceblue;
+  background-color: rgb(220, 20, 60, 0.9);
+}
