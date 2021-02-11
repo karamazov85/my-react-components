@@ -7,7 +7,7 @@ const CarouselDots = ({slideIndex, arrayLength}) => {
     return (
         <div className="dot__container">
            {
-               dotNumberArray.map((placeholder, index) => <BsDot className={`bs-dot ${slideIndex === index ? "dot-active" : ""}`}/>)
+               dotNumberArray.map((_, index) => <BsDot key={index} className={`bs-dot at-index-${index.toString()} ${slideIndex === index ? "dot-active" : ""}`} data-testid="carousel-dot"/>)
            }
         </div>
     )

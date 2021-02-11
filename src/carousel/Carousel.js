@@ -20,12 +20,12 @@ const Carousel = () => {
         }
     },[slideIndex])
 
-    useEffect(() => {
-        let carousel = setInterval(() => {
-            setSlideIndex(slideIndex + 1)
-        }, 3000);
-        return () => clearInterval(carousel)
-    }, [slideIndex])
+    // useEffect(() => {
+    //     let carousel = setInterval(() => {
+    //         setSlideIndex(slideIndex + 1)
+    //     }, 3000);
+    //     return () => clearInterval(carousel)
+    // }, [slideIndex])
 
     return (
         <div className="carousel__container">
@@ -42,11 +42,11 @@ const Carousel = () => {
                     imgPosition = "previous"
                 }
 
-                return <CarouselItem key={item.id} imgPosition={imgPosition} {...item}/>
+                return <CarouselItem key={item.id} imgPosition={imgPosition} itemIndex={itemIndex} {...item}/>
                 })
               }
-            <FaArrowCircleLeft className="arrow-left" onClick={() => setSlideIndex(slideIndex -1)}/>
-            <FaArrowCircleRight className="arrow-right" onClick={() => setSlideIndex(slideIndex + 1)}/>
+            <FaArrowCircleLeft data-testid="arrow-left" className="arrow-left" onClick={() => setSlideIndex(slideIndex -1)}/>
+            <FaArrowCircleRight data-testid="arrow-right" className="arrow-right" onClick={() => setSlideIndex(slideIndex + 1)}/>
             </div>
         <CarouselDots slideIndex={slideIndex} arrayLength={Object.values(CAROUSEL_DATA).length}/>
         </div>
