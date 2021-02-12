@@ -20,12 +20,12 @@ const Carousel = () => {
         }
     },[slideIndex])
 
-    // useEffect(() => {
-    //     let carousel = setInterval(() => {
-    //         setSlideIndex(slideIndex + 1)
-    //     }, 3000);
-    //     return () => clearInterval(carousel)
-    // }, [slideIndex])
+    useEffect(() => {
+        let carousel = setInterval(() => {
+            setSlideIndex(slideIndex + 1)
+        }, 3000);
+        return () => clearInterval(carousel)
+    }, [slideIndex])
 
     return (
         <div className="carousel__container">
