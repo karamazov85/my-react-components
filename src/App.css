@@ -16,6 +16,11 @@ img {
   display: block;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 /* background colours for different comps */
 
 .light-pink-gradient {

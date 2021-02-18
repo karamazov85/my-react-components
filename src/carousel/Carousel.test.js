@@ -74,7 +74,8 @@ test('clicking the arrows adds "active" class to the displayed CarouselItem, "pr
 
 test('without user click, slides images in correct order automatically every 3 sec', () => {
    render(<Carousel />);
-   // test functions that cause React state changes must be wrapped in act();
+   // test functions that cause React state changes OUTSIDE THE REACT CALL STACK must be wrapped in act();
+
    // on component load
    act(() => {
         jest.advanceTimersByTime(3000);

@@ -1,0 +1,19 @@
+.content-container {
+  padding: var(--space);
+  color: white;
+  background-color: black;
+  min-height: 15rem;
+}
+
+.content-container > * + * {
+  margin-top: 1.5rem;
+}
+
+a {
+  font-weight: 700;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
