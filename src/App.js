@@ -3,6 +3,8 @@ import Accordion from "./accordion/Accordion"
 import Carousel from "./carousel/Carousel"
 import Tabs from "./tabs/Tabs"
 import TabsWithHover from "./tabs/TabsWithHover"
+import NavBar from "./navbar/NavBar"
+
 
 function App() {
   return (
@@ -21,6 +23,16 @@ function App() {
       <section>
         <h1 className="carousel__title">Sample Info Box With Hover Tabs</h1>
         <TabsWithHover />
+      </section>
+      <section>
+        <NavBar />
+      </section>
+      <section>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </section>
     </>
   );
