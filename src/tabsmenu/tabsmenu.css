@@ -1,0 +1,26 @@
+.tabs-menu__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.tabs__list {
+  flex: 1 2 10rem;
+}
+
+.submenu__list {
+  flex: 1 2 10rem;
+}
+
+.submenu__list > *:hover {
+  background-color: salmon;
+}
+
+.content__container {
+  flex: 2 1 10rem;
+}
+
+.tab-active {
+  background-color: salmon;
+}

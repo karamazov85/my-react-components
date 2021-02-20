@@ -4,6 +4,7 @@ import Carousel from "./carousel/Carousel"
 import Tabs from "./tabs/Tabs"
 import TabsWithHover from "./tabs/TabsWithHover"
 import NavBar from "./navbar/NavBar"
+import TabsMenu from "./tabsmenu/TabsMenu"
 
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
         <br />
         <br />
         <br />
+      </section>
+      <section>
+        {/* <TabsMenu /> */}
       </section>
     </>
   );

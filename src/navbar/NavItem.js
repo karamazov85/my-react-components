@@ -1,42 +1,38 @@
-import React, { useEffect, useState, useRef} from 'react' 
+import React, { useState } from 'react' 
 import DropDown from "./DropDown"
 import "./navitem.css"
 
 const NavItem = ({ text, dropDownContent}) => {
     
-    const [showDropdown, setShowDropdown] = useState(false)
+    const [showDropdown, setShowDropdown] = useState(true)
 
-    const dropDownRef = useRef()
-    const menuRef = useRef()
-
-    const handleMouseOver = (e) => {
-        console.log(e.target)
-        if(e.target === menuRef.current && e.target === dropDownRef.current) {
+    const handleMouseEnter = (e) => {
            setShowDropdown(true)
+    }
+
+    const handleMouseLeave = (e) => {
+           setShowDropdown(false)
+    }
+
+    const habdleMenuItemClick = (e) => {
+        e.preventDefault(); 
+        if(dropDownContent) {
+            setShowDropdown(!showDropdown)
         }
     }
 
-    useEffect(() => {
-        window.addEventListener("mouseover", handleMouseOver)
-        return () => {
-            window.removeEventListener("mouseover", handleMouseOver)
-        }
-    })
-
     return ( 
-        <>
-        <li>
-          <a href="#" ref={menuRef} onMouseEnter={() => setShowDropdown(true)}>{text}</a>
-        </li>
+        <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={habdleMenuItemClick}>
+          <a href="#">{text}</a>
         {
             showDropdown && (
-            <DropDown ref={dropDownRef}>
+            <DropDown>
                 {
                     dropDownContent && dropDownContent
                 }
             </DropDown>)
         }
-        </>
+        </li>
     )
 }
 

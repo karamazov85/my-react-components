@@ -3,19 +3,6 @@
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   background-color: whitesmoke;
-}
-
-.dropdown-about__sidebar {
-  background-color: wheat;
-}
-
-.dropdown-about__center {
-  background-color: deeppink;
-}
-
-.dropdown-about__right {
-  background-color: aqua;
-  height: 200px;
 }
