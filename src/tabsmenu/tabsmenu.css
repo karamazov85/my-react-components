@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   padding: 1rem;
+  background-color: azure;
 }
 
 .tabs__list {
@@ -13,14 +14,19 @@
   flex: 1 2 10rem;
 }
 
-.submenu__list > *:hover {
+.description__container {
+  flex: 1 1 10rem;
+}
+
+.description__container > *:hover {
   background-color: salmon;
 }
 
-.content__container {
-  flex: 2 1 10rem;
+.menu-item > * {
+  place-self: center;
 }
 
-.tab-active {
+.menu-item-active,
+.submenu-item-active {
   background-color: salmon;
 }

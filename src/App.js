@@ -34,9 +34,16 @@ function App() {
         <br />
         <br />
         <br />
-      </section>
-      <section>
-        {/* <TabsMenu /> */}
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </section>
     </>
   );

@@ -1,27 +1,24 @@
 import React, { useState } from 'react'
 import "./tabsmenu.css"
-// import { sideBarMenuItems } from "../navbar/sideBarMenuItems"
 
-const TabsMenu = ({ sideBarMenuItems }) => {
-    
+const TabsMenu = ({ menuItems }) => {
+
     const[activeId, setActiveId] = useState(null)
     const[activeSubMenuId, setActiveSubMenuId] = useState(null)
 
-    const activeMenuItem = activeId && Object.values(sideBarMenuItems).filter(item => item.id === activeId)
+    const activeMenuItem = activeId && Object.values(menuItems).filter(item => item.id === activeId)
+    const activeSubMenuItem = activeId && Object.values(menuItems).filter(item => item.id === activeId)[0].subMenuItems?.find(subMenuItem => subMenuItem.id === activeSubMenuId)
 
-    const activeSubMenuItem = activeId && Object.values(sideBarMenuItems).filter(item => item.id === activeId)[0].subMenuItems.find(subMenuItem => subMenuItem.id === activeSubMenuId)
-
-    console.log(activeSubMenuItem)
     return (
         <div className="tabs-menu__container">
             <ul className="tabs__list"> 
                 {
-                    Object.values(sideBarMenuItems).map(item =>
+                    Object.values(menuItems).map(item =>
 
                     <li key={item.id}
                         onMouseEnter={() => setActiveId(item.id)}
-                        className={item.id === activeId ? "tab-active" : ""}>
-                            {item.menuName}
+                        className={item.id === activeId ? "menu-item menu-item-active" : "menu-item"}>
+                            <a href={item.url}>{item.menuName}</a>
                     </li>)
                 }
             </ul>
@@ -29,16 +26,19 @@ const TabsMenu = ({ sideBarMenuItems }) => {
             <ul className="submenu__list">
                 {
                     activeMenuItem && 
-                    activeMenuItem[0].subMenuItems.map(subMenuItem =>
+                    activeMenuItem[0]?.subMenuItems?.map(subMenuItem =>
 
-                    <li onMouseEnter={() => setActiveSubMenuId(subMenuItem.id)}>{subMenuItem.subMenuName}</li>)
+                    <li onMouseEnter={() => setActiveSubMenuId(subMenuItem.id)}
+                    className={subMenuItem.id === activeSubMenuId ? "submenu-item submenu-item-active" : "submenu-item"}>
+                       <a href={subMenuItem.url}>{subMenuItem.subMenuName}</a>
+                    </li>)
                 }
             </ul>
 
-            <div className="content__container">
+            <div className="description__container">
                 {   activeSubMenuItem && 
 
-                    <p>{activeSubMenuItem.description}</p>
+                    <a href={activeSubMenuItem.url}>{activeSubMenuItem.description}</a>
                 }
             </div>
         </div>

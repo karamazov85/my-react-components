@@ -1,0 +1,9 @@
+.list-menu__container {
+  width: 100vw;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: aqua;
+  z-index: 999;
+}
