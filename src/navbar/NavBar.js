@@ -9,9 +9,9 @@ const NavBar = () => {
     return (
         <nav className="navbar">
             <ul className="navbar-nav">
-                <NavItem text="Services" content={menuItems["services"]} />
-                <NavItem  text="Pricing" content={menuItems["pricing"]}/>
-                <NavItem  text="About" content={menuItems["about"]}/>
+                <NavItem title="Services" content={menuItems["services"]} />
+                <NavItem  title="Pricing" content={menuItems["pricing"]}/>
+                <NavItem  title="About" content={menuItems["about"]}/>
             </ul>
         </nav>
     )

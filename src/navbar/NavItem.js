@@ -1,11 +1,12 @@
-import React, { useState } from 'react' 
+import React, { useState, useEffect } from 'react' 
 import DropDown from "./DropDown"
 import SlideInMenu from "./SlideInMenu"; 
 import TabsMenu from "../tabsmenu/TabsMenu"
 import ListMenu from "../listmenu/ListMenu"
+import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md"
 import "./navitem.css"
 
-const NavItem = ({ text, content}) => {
+const NavItem = ({ title, content}) => {
     
     const [showDropdown, setShowDropdown] = useState(false)
 
@@ -43,8 +44,12 @@ const NavItem = ({ text, content}) => {
 
     return ( 
         <>
-        <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={habdleMenuItemClick}>
-          <a href="#">{text}</a>
+        <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <div className="menu-button__container">
+              <button className="hovernav__button" onClick={habdleMenuItemClick}>{title}</button>
+                  <MdKeyboardArrowDown className={showDropdown ? "down-arrow show-arrow" : "down-arrow" }/>
+                  <MdKeyboardArrowRight className="right-arrow" />
+          </div>
         {
             showDropdown && (
             <DropDown>
@@ -58,7 +63,7 @@ const NavItem = ({ text, content}) => {
             showSlideInMenu && (
                 <SlideInMenu >
                     {
-                     content && <ListMenu menuItems={content} backToMenu={(e) => handleBackToMenu(e)}/>
+                     content && <ListMenu menuItems={content} backToMenu={handleBackToMenu}/>
                     }
                 </SlideInMenu>
             )

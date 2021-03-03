@@ -18,7 +18,7 @@ const TabsMenu = ({ menuItems }) => {
                     <li key={item.id}
                         onMouseEnter={() => setActiveId(item.id)}
                         className={item.id === activeId ? "menu-item menu-item-active" : "menu-item"}>
-                            <a href={item.url}>{item.menuName}</a>
+                            <button className="hovernav__button">{item.menuName}</button>
                     </li>)
                 }
             </ul>
@@ -30,7 +30,7 @@ const TabsMenu = ({ menuItems }) => {
 
                     <li onMouseEnter={() => setActiveSubMenuId(subMenuItem.id)}
                     className={subMenuItem.id === activeSubMenuId ? "submenu-item submenu-item-active" : "submenu-item"}>
-                       <a href={subMenuItem.url}>{subMenuItem.subMenuName}</a>
+                       <button className="hovernav__button">{subMenuItem.subMenuName}</button>
                     </li>)
                 }
             </ul>
@@ -38,7 +38,7 @@ const TabsMenu = ({ menuItems }) => {
             <div className="description__container">
                 {   activeSubMenuItem && 
 
-                    <a href={activeSubMenuItem.url}>{activeSubMenuItem.description}</a>
+                    <button className="hovernav__button">{activeSubMenuItem.description}</button>
                 }
             </div>
         </div>
