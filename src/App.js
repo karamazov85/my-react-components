@@ -26,6 +26,7 @@ function App() {
         <TabsWithHover />
       </section>
       <section>
+        <h1 className="carousel__title">Hover Navbar With Nested Menu</h1>
         <NavBar />
       </section>
       <section>
