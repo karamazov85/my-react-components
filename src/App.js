@@ -4,7 +4,13 @@ import Carousel from "./carousel/Carousel"
 import Tabs from "./tabs/Tabs"
 import TabsWithHover from "./tabs/TabsWithHover"
 import NavBar from "./navbar/NavBar"
-import TabsMenu from "./tabsmenu/TabsMenu"
+import GoogleMap from "./map/GoogleMap"
+import { Wrapper, Status } from '@googlemaps/react-wrapper'
+
+// prop for Google Maps component
+const render = (status) => {
+  return (<h1>{status}</h1>);
+};
 
 
 function App() {
@@ -30,6 +36,15 @@ function App() {
         <NavBar />
       </section>
       <section>
+        <h1 className="carousel__title">Google Maps Address Checker</h1>
+        <Wrapper apiKey="AIzaSyAdp0_ztYy_GK3Nk0wspYdWiFSBau_-G44" render={render}>
+             <GoogleMap />
+        </Wrapper>
+      </section>
+
+
+      
+      <section> 
         <br />
         <br />
         <br />
